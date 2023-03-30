@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const cartSchema = new mongoose.Schema({
+const productSchema = new mongoose.Schema({
 	itemName: {
 		type: String,
 		required: true,
@@ -17,11 +17,11 @@ const cartSchema = new mongoose.Schema({
 		type: Date,
 		default: Date.now,
 	},
-	cardQuantity: {
+	cartQuantity: {
 		type: Number,
 	},
 });
 
-const Cart = mongoose.model("cartItem", cartSchema);
+const Product = mongoose.model("product", productSchema);
 
-module.exports = Cart;
+module.exports = Product;
