@@ -5,6 +5,7 @@ const Product = require("./models/Products");
 const uuidpackage = require("uuid");
 const cors = require("cors");
 const uuid = uuidpackage.v4;
+require("dotenv");
 
 app.use(express.json());
 app.use(cors());
@@ -53,4 +54,8 @@ app.post("/removeItemFromCart", (req, res) => {
 	res.status(200);
 });
 
-app.listen(3000, console.log("server running on port 3000"));
+app.listen(
+	process.env.PORT ?? 3000,
+	"0.0.0.0",
+	console.log("Express server running!")
+);
